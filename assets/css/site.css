@@ -1813,6 +1813,18 @@ input,
 select {
   vertical-align: middle;
 }
+body {
+  width: 100%;
+  *zoom: 1;
+}
+body:before,
+body:after {
+  content: "";
+  display: table;
+}
+body:after {
+  clear: both;
+}
 html,
 body {
   margin: 0;
@@ -1823,12 +1835,14 @@ html {
   font-size: 16px;
   font-family: DejaVuSans;
 }
-.container {
+.container,
+section.skills {
   width: 100%;
   margin: 0 auto;
 }
 @media all and ( min-width: 960px ) {
-  .container {
+  .container,
+  section.skills {
     width: 960px;
   }
 }
@@ -1898,6 +1912,7 @@ section.about-me .silk {
 section.about-me .dialog {
   position: relative;
   margin-left: 10rem;
+  margin-right: 1rem;
   padding: 1rem;
   background-color: rgba(0, 0, 0, 0.75);
   color: white;
@@ -1915,4 +1930,20 @@ section.about-me .dialog:after {
 }
 section.about-me .dialog p + p {
   margin-top: 1rem;
+}
+section.skills .skill {
+  height: 10rem;
+  display: inline;
+  float: left;
+  width: 300px;
+  margin: 0 10px;
+}
+section.skills .skill:nth-child(1) {
+  background: red;
+}
+section.skills .skill:nth-child(2) {
+  background: green;
+}
+section.skills .skill:nth-child(3) {
+  background: blue;
 }
