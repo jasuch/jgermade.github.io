@@ -1,0 +1,23 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+html {
+	font-size: @rem;
+	font-family: DejaVuSans;
+}
+
+.container {
+	width: 100%;
+	margin: 0 auto;
+
+	@media all and @large-screen {
+		width: @wp-lg;
+	}
+}
+
+a {
+  color: @brand-primary;
+}

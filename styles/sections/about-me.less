@@ -1,0 +1,38 @@
+
+section.about-me {
+  background-image: url('/assets/images/code-skills-bg.jpg');
+  background-size: 100% 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  .silk {
+    padding-top: @logo-margin;
+    min-height: 20rem;
+    background-color: rgba(255,255,255,0.7);
+  }
+
+  .dialog {
+    @dialog-background: rgba(0,0,0,0.75);
+
+    position: relative;
+    margin-left: @logo-size + 2*@logo-margin;
+    padding: @logo-margin;
+    background-color: @dialog-background;
+    color: white;
+    line-height: 1.4rem;
+
+    &:after {
+      content: ''; display: block;
+      position: absolute;
+      top: 0; left: -1rem;
+      border-top: 1rem solid transparent;
+      border-right: 1rem solid @dialog-background;
+      border-bottom: 1rem solid transparent;
+    }
+
+    p + p {
+      margin-top: @logo-margin;
+    }
+  }
+}

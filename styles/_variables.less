@@ -1,0 +1,44 @@
+
+@wp-xl: 1200px;
+@wp-lg: 960px;
+@wp-md: 768px;
+@wp-sm: 480px;
+
+@xlarge-screen: ~"( min-width: @{wp-xl} )";
+@large-screen: ~"( min-width: @{wp-lg} )";
+@medium-screen: ~"( min-width: @{wp-sm} ) and ( max-width: @{wp-lg} )";
+@normal-screen: ~"( min-width: @{wp-md} )";
+@small-screen: ~"( max-width: @{wp-md} )";
+@xsmall-screen: ~"( max-width: @{wp-sm} )";
+
+@rem: 16px;
+
+@font-size-base: @rem;
+
+@fonts-path: '/assets/fonts';
+
+@logo-size: 8rem;
+@logo-size-sm: @logo-size*0.5;
+@logo-margin: 1rem;
+
+@header-height: @logo-size + 1rem;
+@header-height-sm: @logo-size-sm + 1rem;
+
+@footer-height: 2rem;
+
+@libs-nav-width: 13rem;
+
+// Colors
+
+@brand-primary: royalblue;
+@brand-secondary: goldenrod;
+@brand-info: lightsteelblue;
+@brand-warning: goldenrod;
+@brand-error: firebrick;
+
+@brand-danger: @brand-error;
+
+@brand-dark-gray: #444;
+
+@gray-light: #eee;
+@gray-line: #999;

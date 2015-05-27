@@ -1,0 +1,59 @@
+
+// header
+
+header.header {
+  background-color: @gray-light;
+  height: 2*@logo-size/3;
+  border-bottom: 1px solid @gray-line;
+
+  a.picture {
+
+    float: left;
+    margin: @logo-margin;
+    display: inline-block;
+    border: 1px solid black;
+    .box-shadow( 0 0 6px 0 rgba(0, 0, 0, 0.6) );
+
+    img {
+      vertical-align: top;
+      height: @logo-size;
+      width: @logo-size;
+    }
+  }
+
+  .me {
+    padding-top: @logo-margin;
+    display: inline-block;
+
+    a.name {
+      font-size: 1.4rem;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 0.7rem;
+      text-shadow: 0 0 1px rgba(0,0,0,0.5);
+
+      .hover {
+        display: none;
+      }
+
+      &:hover .hover {
+        display: inherit;
+
+        span {
+          color: @brand-dark-gray;
+        }
+      }
+
+      &:hover .normal {
+        display: none;
+      }
+    }
+
+    .role {
+      font-family: Lobster;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #444;
+    }
+  }
+}

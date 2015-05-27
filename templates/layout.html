@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Jesús Germade | ${i18n.role}</title>
+    <meta name="description" lang="${lang}" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="/assets/css/site.css" />
+
+    <script src="//localhost:35729/livereload.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="container">
+        <a href="${rootUrl}" class="picture">
+          <img alt="picture" src="/assets/images/joshua.jpg"/>
+        </a>
+        <div class="me">
+          <a href="${rootUrl}" class="name">
+            <span class="normal">Jesús Germade</span>
+            <span class="hover">Jesus<span>.</span>Germade<span>.</span>es</span>
+          </a>
+          <div class="role">${i18n.role}</div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="about-me">
+      <div class="silk">
+        <div class="container">
+          <div class="dialog">
+            $each{ text in i18n.aboutMe }<p>${text}</p>{/}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+
+    </footer>
+  </body>
+</html>
