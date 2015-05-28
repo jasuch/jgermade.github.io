@@ -15,6 +15,7 @@ header.header {
 
     float: left;
     display: inline-block;
+    position: relative;
 
     padding: @logo-margin/2;
     @media all and @normal-screen {
@@ -22,15 +23,42 @@ header.header {
       margin: @logo-margin;
     }
 
+    @media all and @small-screen {
+      &:before, &:after {
+        content: ''; display: block;
+      }
+
+      .lines, &:before, &:after {
+        position: absolute;
+        left: 0; width: 50%;
+        margin-top: -0.25rem;
+        height: 0.5rem;
+        background: lighten(@brand-dark-gray, 50%);
+        z-index: -1;
+      }
+
+      .lines {
+        top: 50%;
+      }
+
+      &:before {
+        top: 30%;
+      }
+
+      &:after {
+        top: 70%;
+      }
+    }
+
     img {
       border: 1px solid black;
-      .box-shadow( 0 0 @rem 0 rgba(0, 0, 0, 0.6) );
 
       vertical-align: top;
       height: @logo-size-sm;
       width: @logo-size-sm;
 
       @media all and @normal-screen {
+        .box-shadow( 0 0 @rem 0 rgba(0, 0, 0, 0.6) );
         height: @logo-size;
         width: @logo-size;
     	}
@@ -39,6 +67,7 @@ header.header {
 
   .me {
     padding-top: @logo-margin;
+    margin-left: @logo-margin/2;
     display: inline-block;
 
     a.name {
