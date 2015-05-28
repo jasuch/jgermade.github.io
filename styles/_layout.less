@@ -5,8 +5,16 @@ html, body {
 }
 
 html {
-	font-size: @rem;
+	font-size: @font-size-base-sm;
+	@media all and @large-screen {
+		font-size: @font-size-base;
+	}
+
 	font-family: DejaVuSans;
+}
+
+body {
+	background-color: @gray-light;
 }
 
 .container {

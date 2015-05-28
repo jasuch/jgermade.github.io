@@ -1,23 +1,39 @@
 
 // header
 
+@logo-size-sm: @logo-size/2;
+
 header.header {
-  background-color: @gray-light;
-  height: 2*@logo-size/3;
   border-bottom: 1px solid @gray-line;
+
+  height: @logo-size-sm + @logo-margin;
+  @media all and @normal-screen {
+    height: 2*@logo-size/3;
+  }
 
   a.picture {
 
     float: left;
-    margin: @logo-margin;
     display: inline-block;
-    border: 1px solid black;
-    .box-shadow( 0 0 6px 0 rgba(0, 0, 0, 0.6) );
+
+    padding: @logo-margin/2;
+    @media all and @normal-screen {
+      padding: 0;
+      margin: @logo-margin;
+    }
 
     img {
+      border: 1px solid black;
+      .box-shadow( 0 0 @rem 0 rgba(0, 0, 0, 0.6) );
+
       vertical-align: top;
-      height: @logo-size;
-      width: @logo-size;
+      height: @logo-size-sm;
+      width: @logo-size-sm;
+
+      @media all and @normal-screen {
+        height: @logo-size;
+        width: @logo-size;
+    	}
     }
   }
 
@@ -29,8 +45,10 @@ header.header {
       font-size: 1.4rem;
       text-decoration: none;
       display: inline-block;
-      margin-bottom: 0.7rem;
+      margin-bottom: 0.4rem;
       text-shadow: 0 0 1px rgba(0,0,0,0.5);
+
+      color: darken(@brand-primary, 20%);
 
       .hover {
         display: none;
@@ -51,8 +69,12 @@ header.header {
 
     .role {
       font-family: Lobster;
-      font-size: 1.2rem;
-      font-weight: bold;
+
+      font-size: 1.2*@rem;
+      @media all and @normal-screen {
+        font-size: 1.4*@rem;
+      }
+      // font-weight: bold;
       color: #444;
     }
   }

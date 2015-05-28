@@ -1,4 +1,7 @@
 
+@dialog-background: rgba(0,0,0,0.8);
+@logo-margin-sm: @logo-margin/2;
+
 section.about-me {
   background-image: url('/assets/images/code-skills-bg.jpg');
   background-size: 100% 100%;
@@ -7,29 +10,46 @@ section.about-me {
   background-attachment: fixed;
 
   .silk {
-    padding-top: @logo-margin;
-    min-height: 20rem;
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(255,255,255,0.75);
+
+    .container {
+      padding: @logo-margin-sm;
+      padding-bottom: @logo-margin;
+
+      @media all and @normal-screen {
+        padding: @logo-margin @logo-margin @logo-margin ( @logo-size + 2*@logo-margin );
+      }
+    }
   }
 
   .dialog {
-    @dialog-background: rgba(0,0,0,0.75);
-
     position: relative;
-    margin-left: @logo-size + 2*@logo-margin;
-    margin-right: @logo-margin;
-    padding: @logo-margin;
+    padding: @logo-margin-sm;
     background-color: @dialog-background;
     color: white;
     line-height: 1.4rem;
 
-    &:after {
+    @media all and @normal-screen {
+      padding: @logo-margin;
+    }
+
+    &:before {
       content: ''; display: block;
       position: absolute;
-      top: 0; left: -1rem;
-      border-top: 1rem solid transparent;
-      border-right: 1rem solid @dialog-background;
-      border-bottom: 1rem solid transparent;
+
+      left: @logo-margin; top: -@logo-margin;
+      border-left: @logo-margin solid transparent;
+      border-bottom: @logo-margin solid @dialog-background;
+      border-right: @logo-margin solid transparent;
+      border-top: 0;
+
+      @media all and @normal-screen {
+        top: 0; left: -@logo-margin;
+        border-top: @logo-margin solid transparent;
+        border-right: @logo-margin solid @dialog-background;
+        border-bottom: @logo-margin solid transparent;
+        border-left: 0;
+      }
     }
 
     p + p {
