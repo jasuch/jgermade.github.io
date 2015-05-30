@@ -1832,13 +1832,8 @@ body {
   height: 100%;
 }
 html {
-  font-size: 13.5px;
+  font-size: 15px;
   font-family: DejaVuSans;
-}
-@media all and ( min-width: 960px ) {
-  html {
-    font-size: 15px;
-  }
 }
 body {
   background-color: #eeeeee;
@@ -1964,8 +1959,7 @@ section.about-me .silk {
   background-color: rgba(255, 255, 255, 0.75);
 }
 section.about-me .silk .container {
-  padding: 0.5rem;
-  padding-bottom: 1rem;
+  padding: 1rem;
 }
 @media all and ( min-width: 768px ) {
   section.about-me .silk .container {
@@ -1974,21 +1968,16 @@ section.about-me .silk .container {
 }
 section.about-me .dialog {
   position: relative;
-  padding: 0.5rem;
+  padding: 1rem;
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
   line-height: 1.4rem;
-}
-@media all and ( min-width: 768px ) {
-  section.about-me .dialog {
-    padding: 1rem;
-  }
 }
 section.about-me .dialog:before {
   content: '';
   display: block;
   position: absolute;
-  left: 1rem;
+  left: 0.5rem;
   top: -1rem;
   border-left: 1rem solid transparent;
   border-bottom: 1rem solid rgba(0, 0, 0, 0.8);

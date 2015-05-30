@@ -13,8 +13,7 @@ section.about-me {
     background-color: rgba(255,255,255,0.75);
 
     .container {
-      padding: @logo-margin-sm;
-      padding-bottom: @logo-margin;
+      padding: @logo-margin;
 
       @media all and @normal-screen {
         padding: @logo-margin @logo-margin @logo-margin ( @logo-size + 2*@logo-margin );
@@ -24,20 +23,16 @@ section.about-me {
 
   .dialog {
     position: relative;
-    padding: @logo-margin-sm;
+    padding: @logo-margin;
     background-color: @dialog-background;
     color: white;
     line-height: 1.4rem;
-
-    @media all and @normal-screen {
-      padding: @logo-margin;
-    }
 
     &:before {
       content: ''; display: block;
       position: absolute;
 
-      left: @logo-margin; top: -@logo-margin;
+      left: @logo-margin-sm; top: -@logo-margin;
       border-left: @logo-margin solid transparent;
       border-bottom: @logo-margin solid @dialog-background;
       border-right: @logo-margin solid transparent;
