@@ -50,7 +50,7 @@ module.exports = function(grunt) {
         },
       },
 			templates: {
-        files: ['templates/{,**/}*.html'],
+        files: ['templates/{,**/}*.html', 'i18n/{,**/}*.*'],
         tasks: ['templates'],
         options: {
           spawn: false,
@@ -76,11 +76,24 @@ module.exports = function(grunt) {
 
   grunt.registerTask('templates', function () {
 
-		var layout = require('jengine-template').compile( grunt.file.read('templates/layout.html') ),
+		var marked = require('marked'),
+				layout = require('jengine-template').compile( grunt.file.read('templates/layout.html') ),
 				Scope = require('jengine-scope'),
-    		data = new Scope();
+    		data = new Scope(),
+				langsList = ['en'];
 
-		grunt.file.write('index.html', layout( data.$$new({ lang: 'en', i18n: grunt.file.readJSON('i18n/en.json') }) ) );
+		langsList.forEach(function (lang) {
+
+			langData = data.$$new({
+				lang: lang,
+				i18n: grunt.file.readJSON('i18n/' + lang + '/texts.json'),
+				aboutMe: marked( grunt.file.read('i18n/' + lang + '/about-me.md') ),
+				otherLangs: langsList.slice().filter(function (langCode) { return langCode !== lang; })
+			});
+
+			grunt.file.write( lang === 'en' ? 'index.html' : ( lang + '/index.html' ) , layout( langData ) );
+
+		});
 
   });
 
