@@ -1838,12 +1838,14 @@ html {
 body {
   background-color: #eeeeee;
 }
-.container {
+.container,
+section.skills {
   width: 100%;
   margin: 0 auto;
 }
 @media all and ( min-width: 960px ) {
-  .container {
+  .container,
+  section.skills {
     width: 960px;
   }
 }
@@ -1851,7 +1853,6 @@ a {
   color: royalblue;
 }
 header.header {
-  border-bottom: 1px solid #999999;
   height: 5rem;
 }
 @media all and ( min-width: 768px ) {
@@ -1954,6 +1955,8 @@ section.about-me {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  border-top: 1px solid #999999;
+  border-bottom: 1px solid #999999;
 }
 section.about-me .silk {
   background-color: rgba(255, 255, 255, 0.75);
@@ -1998,7 +2001,7 @@ section.about-me .dialog p + p {
   margin-top: 1rem;
 }
 section.skills {
-  border-top: 1px solid #999999;
+  padding: 0 1rem;
   *zoom: 1;
 }
 section.skills:before,
@@ -2008,4 +2011,30 @@ section.skills:after {
 }
 section.skills:after {
   clear: both;
+}
+section.skills .skill {
+  *zoom: 1;
+}
+section.skills .skill:before,
+section.skills .skill:after {
+  content: "";
+  display: table;
+}
+section.skills .skill:after {
+  clear: both;
+}
+section.skills .skill .skill-image {
+  float: left;
+  padding: 1rem;
+}
+section.skills .skill .skill-image img {
+  width: 6rem;
+  height: 6rem;
+}
+section.skills .skill.image-right .skill-image {
+  float: right;
+}
+section.skills .skill .skill-description {
+  padding: 1rem 0;
+  line-height: 1.4rem;
 }

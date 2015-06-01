@@ -1,9 +1,35 @@
 
 section.skills {
 
-  border-top: 1px solid @gray-line;
+  padding: 0 1rem;
 
+  &:extend(.container);
   .clearfix();
+
+  .skill {
+    .clearfix();
+
+    .skill-image {
+        float: left;
+      padding: 1rem;
+
+      img {
+        width: @skill-image-size;
+        height: @skill-image-size;
+      }
+    }
+
+    &.image-right {
+      .skill-image {
+        float: right;
+      }
+    }
+
+    .skill-description {
+      padding: 1rem 0;
+      line-height: 1.4rem;
+    }
+  }
 
   // .skill {
   //   height: 10rem;
